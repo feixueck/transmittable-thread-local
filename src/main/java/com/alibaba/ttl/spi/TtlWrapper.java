@@ -4,20 +4,20 @@ import com.alibaba.ttl.TtlUnwrap;
 import edu.umd.cs.findbugs.annotations.NonNull;
 
 /**
- * Ttl Wrapper interface.
+ * Ttl Wrapper interface. Used to mark wrapper types.
  *
  * @author Jerry Lee (oldratlee at gmail dot com)
  * @see TtlUnwrap#unwrap
+ * @see com.alibaba.ttl.TtlCallable
+ * @see com.alibaba.ttl.TtlRunnable
+ * @see com.alibaba.ttl.threadpool.TtlExecutors
+ * @see com.alibaba.ttl.threadpool.DisableInheritableThreadFactory
+ * @see com.alibaba.ttl.threadpool.DisableInheritableForkJoinWorkerThreadFactory
  * @since 2.11.4
  */
 public interface TtlWrapper<T> extends TtlEnhanced {
     /**
      * unwrap {@link TtlWrapper} to the original/underneath one.
-     * <p>
-     * this method is {@code null}-safe, when input {@code BiFunction} parameter is {@code null}, return {@code null};
-     * if input parameter is not a {@code TtlWrapper} just return input.
-     * <p>
-     * so {@code unwrap} will always return the same input object.
      *
      * @see TtlUnwrap#unwrap(Object)
      */
